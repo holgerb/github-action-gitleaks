@@ -67,7 +67,7 @@ echo "----------------------------------"
 command="gitleaks"
 if [ -f "${INPUT_CONFIG_PATH}" ]
 then
-    command=$(arg "${command}" '--config-path=%s' "${INPUT_CONFIG_PATH}")
+    command=$(arg "${command}" '--config=%s' "${INPUT_CONFIG_PATH}")
 fi
 if [ -f "${INPUT_ADDITIONAL_CONFIG}" ]
 then
@@ -100,7 +100,7 @@ else
     command=$(arg "${command}" '--no-git' "${INPUT_NO_GIT}")
 fi
 
-echo "Running gitleaks $(gitleaks --version)"
+echo "Running gitleaks $(gitleaks version)"
 echo "----------------------------------"
 echo "${command}"
 echo "::set-output name=command::${command}"
